@@ -20,6 +20,8 @@ app.upload = configMulter;
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
+app.use(expressValidator());
+
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static('./app/public'))
 app.use(expressSession({
