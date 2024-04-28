@@ -21,7 +21,7 @@ module.exports.valida_login = function (app, req, res) {
         if (result.length != 0) {
             req.session.autorizado = 'adm';
             req.session.codLogado = result[0].codAdmin;
-            res.redirect('/produtos');
+            res.redirect(`/produtos?codLogado=${result[0].codAdmin}`)
             console.log(result, "logado")
             return;
         }
